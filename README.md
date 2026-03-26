@@ -97,9 +97,3 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
-If you have any questions or feedback, please feel free to reach out to us at (mailto: abhishekkalligudd@gmail.com).
-
-## License
-
-The software code is licensed under the MIT License.
