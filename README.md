@@ -25,7 +25,6 @@ Xhire is an open source platform for companies to conduct AI powered hiring inte
 - **📊 Smart Analysis:** Get detailed insights and scores for each interview response, powered by advanced AI.
 - **📈 Comprehensive Dashboard:** Track all candidate performances and overall stats.
 
-Here's a [loom](https://www.loom.com/share/762fd7d12001490bbfdcf3fac37ff173?sid=9a5b2a5a-64df-4c4c-a0e7-fc9765691f81) of me explaining the app.
 
 ## Initial Setup
 
@@ -98,21 +97,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Self Hosting
-
-We recommend using [Vercel](https://vercel.com/) to host the app.
-
-## Contributing
-
-If you'd like to contribute to Xhire, feel free to fork the repository, make your changes, and submit a pull request. Contributions are welcomed and appreciated.
-
-For a detailed guide on contributing, read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-## Show Your Support 🌟
-
-If you find Xhire helpful, please consider giving us a star on GitHub! It helps us reach more developers and continue improving the project.
-
-## Contact
 
 If you have any questions or feedback, please feel free to reach out to us at (mailto: abhishekkalligudd@gmail.com).
 
