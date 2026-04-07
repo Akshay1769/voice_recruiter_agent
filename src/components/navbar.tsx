@@ -8,10 +8,24 @@ function Navbar() {
       <div className="flex items-center justify-between h-full gap-2 px-8 mx-auto">
         <div className="flex flex-row gap-3 justify-center">
           <Link href={"/dashboard"} className="flex items-center gap-2">
-            <p className="px-2 py-1 text-2xl font-bold text-black">
-              X<span className="text-indigo-600">Hire</span>{" "}
+             <span>
+              <img
+                src="/Xhire.png"
+                alt="Xhire Logo"
+                className="w-8 h-8 rounded-sm"
+              />
+             </span>
+             <span className="px-2 py-1 text-2xl font-bold text-black">
+              X<span className="text-indigo-600">Hire</span>
+             </span>
+             <span className="text-[8px]">
+             </span>
+            {/* <p className="px-2 py-1 text-2xl font-bold text-black">X
+
+              <span className="text-indigo-600">Hire</span>{" "}
+
               <span className="text-[8px]"></span>
-            </p>
+            </p> */}
           </Link>
           <p className="my-auto text-xl"></p>
           <div className="my-auto">
