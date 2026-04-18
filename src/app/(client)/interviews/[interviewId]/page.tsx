@@ -696,7 +696,7 @@ function InterviewHome({ params, searchParams }: Props) {
           open={isSharePopupOpen}
           shareContent={
             interview?.readable_slug
-              ? `${base_url}/call/${interview?.readable_slug}`
+              ? `${getBaseUrl}/call/${interview?.readable_slug}`
               : (interview?.url as string)
           }
           onClose={closeSharePopup}

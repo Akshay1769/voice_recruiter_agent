@@ -20,8 +20,6 @@ interface Props {
   readableSlug: string;
 }
 
-const base_url = getBaseUrl();
-
 function InterviewCard({ name, interviewerId, id, url, readableSlug }: Props) {
   const [copied, setCopied] = useState(false);
   const [responseCount, setResponseCount] = useState<number | null>(null);
@@ -75,6 +73,7 @@ function InterviewCard({ name, interviewerId, id, url, readableSlug }: Props) {
   }, []);
 
   const copyToClipboard = () => {
+    const base_url = getBaseUrl();
     navigator.clipboard
       .writeText(
         readableSlug ? `${base_url}/call/${readableSlug}` : (url as string),
@@ -94,7 +93,7 @@ function InterviewCard({ name, interviewerId, id, url, readableSlug }: Props) {
           }, 2000);
         },
         (err) => {
-          console.log("failed to copy", err.mesage);
+          console.log("failed to copy", err.message);
         },
       );
   };
