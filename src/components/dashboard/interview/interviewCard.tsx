@@ -9,6 +9,8 @@ import { ResponseService } from "@/services/responses.service";
 import axios from "axios";
 import MiniLoader from "@/components/loaders/mini-loader/miniLoader";
 import { InterviewerService } from "@/services/interviewers.service";
+import { getBaseUrl } from "@/lib/utils";
+
 
 interface Props {
   name: string | null;
@@ -18,7 +20,7 @@ interface Props {
   readableSlug: string;
 }
 
-const base_url = process.env.NEXT_PUBLIC_LIVE_URL;
+const base_url = getBaseUrl();
 
 function InterviewCard({ name, interviewerId, id, url, readableSlug }: Props) {
   const [copied, setCopied] = useState(false);

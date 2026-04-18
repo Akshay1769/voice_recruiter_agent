@@ -45,6 +45,7 @@ import {
 } from "@/components/ui/select";
 import { CandidateStatus } from "@/lib/enum";
 import LoaderWithText from "@/components/loaders/loader-with-text/loaderWithText";
+import {getBaseUrl} from "@/lib/utils";
 
 interface Props {
   params: {
@@ -55,8 +56,6 @@ interface Props {
     edit: boolean;
   };
 }
-
-const base_url = process.env.NEXT_PUBLIC_LIVE_URL;
 
 function InterviewHome({ params, searchParams }: Props) {
   const [interview, setInterview] = useState<Interview>();
@@ -79,24 +78,8 @@ function InterviewHome({ params, searchParams }: Props) {
     []
   );
 
-
-  const getBaseUrl = () => {
-  
-  if (typeof window !== "undefined") {
-    return window.location.origin; 
-  }
-
-  
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-
- 
-  return "http://localhost:3000";
-};
-
   const seeInterviewPreviewPage = () => {
-    
+      const base_url = getBaseUrl();
     if (interview?.url) {
       const url = interview?.readable_slug
         ? `${base_url}/call/${interview?.readable_slug}`

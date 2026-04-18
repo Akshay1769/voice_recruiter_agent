@@ -2,8 +2,10 @@ import { nanoid } from "nanoid";
 import { NextResponse } from "next/server";
 import { InterviewService } from "@/services/interviews.service";
 import { logger } from "@/lib/logger";
+import { getBaseUrl } from "@/lib/utils";
 
-const base_url = process.env.NEXT_PUBLIC_LIVE_URL;
+
+const base_url = getBaseUrl();
 
 export async function POST(req: Request, res: Response) {
   try {
@@ -17,10 +19,10 @@ export async function POST(req: Request, res: Response) {
 
     let readableSlug = null;
     if (body.organizationName) {
-      const interviewNameSlug = payload.name?.toLowerCase().replace(/\s/g, "-");
+      const interviewNameSlug = payload.name?.toLowerCase().replace(/\s+/g, "-");
       const orgNameSlug = body.organizationName
         ?.toLowerCase()
-        .replace(/\s/g, "-");
+        .replace(/\s+/g, "-");
       readableSlug = `${orgNameSlug}-${interviewNameSlug}`;
     }
 
