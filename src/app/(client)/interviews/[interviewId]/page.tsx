@@ -79,11 +79,27 @@ function InterviewHome({ params, searchParams }: Props) {
     []
   );
 
+
+  const getBaseUrl = () => {
+  
+  if (typeof window !== "undefined") {
+    return window.location.origin; 
+  }
+
+  
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+ 
+  return "http://localhost:3000";
+};
+
   const seeInterviewPreviewPage = () => {
-    const protocol = base_url?.includes("localhost") ? "http" : "https";
+    
     if (interview?.url) {
       const url = interview?.readable_slug
-        ? `${protocol}://${base_url}/call/${interview?.readable_slug}`
+        ? `${base_url}/call/${interview?.readable_slug}`
         : interview.url.startsWith("http")
         ? interview.url
         : `https://${interview.url}`;
