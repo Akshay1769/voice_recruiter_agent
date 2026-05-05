@@ -79,7 +79,7 @@ function InterviewHome({ params, searchParams }: Props) {
   );
 
   const seeInterviewPreviewPage = () => {
-      const base_url = getBaseUrl();
+    const base_url = getBaseUrl();
     if (interview?.url) {
       const url = interview?.readable_slug
         ? `${base_url}/call/${interview?.readable_slug}`

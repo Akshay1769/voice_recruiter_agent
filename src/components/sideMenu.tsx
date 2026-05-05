@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PlayCircleIcon, SpeechIcon } from "lucide-react";
+import { PlayCircleIcon, SpeechIcon ,Upload } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
 function SideMenu() {
@@ -24,6 +24,10 @@ function SideMenu() {
             <PlayCircleIcon className="font-thin	 mr-2" />
             <p className="font-medium ">Interviews</p>
           </div>
+
+
+
+
           <div
             className={`flex flex-row p-3 rounded-md hover:bg-slate-200 cursor-pointer ${
               pathname.endsWith("/interviewers")
@@ -35,6 +39,21 @@ function SideMenu() {
             <SpeechIcon className="font-thin mr-2" />
             <p className="font-medium ">Interviewers</p>
           </div>
+
+
+
+           <div
+            className={`flex flex-row p-3 rounded-md hover:bg-slate-200 cursor-pointer ${
+              pathname.endsWith("/resume")
+                ? "bg-indigo-200"
+                : "bg-slate-100"
+            }`}
+            onClick={() => router.push("/dashboard/resume")}
+          >
+            <Upload className="mr-2" />
+            <p className="font-medium">Add Resume</p>
+          </div>
+         
         </div>
       </div>
     </div>

@@ -78,7 +78,8 @@ export async function POST(req: Request) {
 
     if (!candidate) {
 
-      const interviewRes = await fetch(`${getBaseUrl()}/api/create-interview`, {
+      // create interview (same as your app)
+      await fetch(`${getBaseUrl()}/api/create-interview`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -89,18 +90,28 @@ export async function POST(req: Request) {
         }),
       });
 
-      const interviewData = await interviewRes.json();
+      // fetch latest interview (same pattern as UI)
+      const { data: interview } = await supabase
+        .from("interviews")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .single();
 
-      if (!interviewRes.ok) {
+      if (!interview) {
         return NextResponse.json(
-          { error: "Failed to create interview" },
+          { error: "Failed to fetch interview" },
           { status: 500 }
         );
       }
 
-      const interviewLink = interviewData.readable_slug
-        ? `${getBaseUrl()}/call/${interviewData.readable_slug}`
-        : interviewData.url;
+      const base_url = getBaseUrl();
+
+      const interviewLink = interview.readable_slug
+        ? `${base_url}/call/${interview.readable_slug}`
+        : interview.url?.startsWith("http")
+        ? interview.url
+        : `https://${interview.url}`;
 
       const { data } = await supabase
         .from("candidates")
