@@ -216,7 +216,7 @@ function DetailsPopup({
               <></>
             )}
           </div>
-          <h3 className="text-sm font-medium">Objective:</h3>
+          <h3 className="text-sm font-medium">job Description:</h3>
           <Textarea
             value={objective}
             className="h-24 mt-2 border-2 border-gray-500 w-[33.2rem]"
@@ -224,7 +224,7 @@ function DetailsPopup({
             onChange={(e) => setObjective(e.target.value)}
             onBlur={(e) => setObjective(e.target.value.trim())}
           />
-          <h3 className="text-sm font-medium mt-2">
+          {/* <h3 className="text-sm font-medium mt-2">
             Upload any documents related to the interview.
           </h3>
           <FileUpload
@@ -233,7 +233,7 @@ function DetailsPopup({
             fileName={fileName}
             setFileName={setFileName}
             setUploadedDocumentContext={setUploadedDocumentContext}
-          />
+          /> */}
           <label className="flex-col mt-7 w-full">
             <div className="flex items-center cursor-pointer">
               <span className="text-sm font-medium">

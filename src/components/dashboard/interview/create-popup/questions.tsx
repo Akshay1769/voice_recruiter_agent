@@ -153,7 +153,7 @@ function QuestionsPopup({ interviewData, setProceed, setOpen }: Props) {
           style={{ fontSize: "0.7rem", lineHeight: "0.66rem" }}
           className="font-light text-xs italic w-full text-left block"
         >
-          Note: Interviewees will see this description.
+          {/* Note: Interviewees will see this description. */}
         </span>
       </p>
       <textarea

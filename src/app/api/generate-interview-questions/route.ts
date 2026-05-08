@@ -105,7 +105,7 @@
 // }
 
 
-// 🔥 NOTE: this file has been refactored to use Groq SDK instead of OpenAI, as Groq provides better performance and cost for our use case. The old code is commented out above for reference.
+//  NOTE: this file has been altered to use Groq SDK instead of OpenAI, as Groq is free. The old code is commented out above for reference.
 
 
 import { NextResponse } from "next/server";
@@ -154,7 +154,7 @@ export async function POST(req: Request) {
 
     let content = completion.choices[0]?.message?.content ?? "";
 
-    // 🔥 IMPORTANT: sanitize markdown fences
+    
     content = cleanJsonResponse(content);
 
     logger.info("Interview questions generated successfully");
