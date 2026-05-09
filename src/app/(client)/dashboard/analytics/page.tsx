@@ -8,6 +8,7 @@ type Candidate = {
   email: string;
   ats_score: number;
   shortlisted: boolean;
+  role: string;
 };
 
 function InfoTooltip({ content }: { content: string }) {
@@ -264,6 +265,10 @@ function AnalyticsPage() {
                   </th>
 
                   <th className="text-left py-3">
+                     Role
+                  </th>
+
+                  <th className="text-left py-3">
                     ATS Score
                   </th>
 
@@ -281,6 +286,10 @@ function AnalyticsPage() {
                   >
                     <td className="py-4">
                       {candidate.email}
+                    </td>
+
+                    <td className="py-4">
+                      {candidate.role}
                     </td>
 
                     <td className="py-4">
