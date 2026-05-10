@@ -18,7 +18,7 @@ export default function ResumePage() {
       )}
 
       <iframe
-        src="https://atsmain.up.railway.app"
+        src="https://ats-system-1-a6dv.onrender.com"
         className="w-full h-screen border-none"
         onLoad={() => setLoaded(true)}
       />
