@@ -4,7 +4,7 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
 
-    const response = await fetch("atsmain.up.railway.app/analyze", {
+    const response = await fetch("https://atsmain.up.railway.app/analyze", {
       method: "POST",
       body: formData,
     });
