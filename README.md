@@ -1,10 +1,6 @@
-[![GitHub stars](https://img.shields.io/github/stars/Xhire/Xhire?style=social)](https://github.com/Xhire/Xhire/stargazers)
-![License](https://img.shields.io/github/license/Xhire/Xhire)
-[![Twitter Follow](https://img.shields.io/twitter/follow/SuveenE?style=social)](https://x.com/SuveenE)
+# Xhire - AI-powered voice interviewer for hiring 
 
-# Xhire - AI-powered voice interviewer for hiring 💼
 
-Xhire is an open source platform for companies to conduct AI powered hiring interviews with their candidates.
 
 <img src="https://github.com/user-attachments/assets/fa92ade1-02ea-4332-b5ed-97056dea01c3" alt="Xhire Logo" width="800">
 
