@@ -18,7 +18,7 @@ export default function ResumePage() {
       )}
 
       <iframe
-        src="http://13.48.166.164:8501"
+        src="https://streamlit-proxy-szp0.onrender.com"
         className="w-full h-screen border-none"
         onLoad={() => setLoaded(true)}
       />

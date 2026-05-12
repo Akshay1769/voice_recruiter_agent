@@ -4,7 +4,7 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
 
-    const response = await fetch("http://13.48.166.164:8501/analyze", {
+    const response = await fetch("https://streamlit-proxy-szp0.onrender.com/analyze", {
       method: "POST",
       body: formData,
     });
