@@ -18,7 +18,7 @@ export default function ResumePage() {
       )}
 
       <iframe
-        src="https://ats-system-1-a6dv.onrender.com"
+        src="http://13.48.166.164:8501"
         className="w-full h-screen border-none"
         onLoad={() => setLoaded(true)}
       />
