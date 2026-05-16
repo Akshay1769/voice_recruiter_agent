@@ -5,7 +5,7 @@
 
 <div style="display: flex; flex-direction: row; gap: 20px; margin: 20px 0;">
   <picture>
-    <img width="1912" height="928" alt="image" src="https://github.com/user-attachments/assets/a52c7f37-d5c1-45a8-8f22-005662d07b87" />
+    <img  alt="image" src="https://github.com/user-attachments/assets/a52c7f37-d5c1-45a8-8f22-005662d07b87" width="400" style="max-width: 100%; />
   </picture>
   <picture>
     <img src="https://github.com/user-attachments/assets/91bbe5d5-1eff-4158-80d9-d98c2a53f59b" alt="Description 2" width="400" style="max-width: 100%;">
