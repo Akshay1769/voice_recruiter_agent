@@ -1,8 +1,7 @@
 # Xhire - AI-powered voice interviewer for hiring 
 
-
-
-<img src="https://github.com/user-attachments/assets/fa92ade1-02ea-4332-b5ed-97056dea01c3" alt="Xhire Logo" width="800">
+<img src="<img width="1917" height="928" alt="image" src="https://github.com/user-attachments/assets/200c11ef-7d05-4c5c-adde-6a615f2f633b" />
+" alt="Xhire Logo" width="800">
 
 <div style="display: flex; flex-direction: row; gap: 20px; margin: 20px 0;">
   <picture>
