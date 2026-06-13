@@ -59,9 +59,9 @@ We use Retell AI to manage all the voice calls. They manage storage of recording
 
 1. Create an API key from [Retell AI Dashboard](https://dashboard.retellai.com/apiKey) and add it to the `.env` file in `RETELL_API_KEY`
 
-## Add OpenAI API Key
+## Add GroqAI API Key
 
-We use OpenAI to generate questions for interviews and analyze responses. This would not be that costly.
+We use GroqAI to generate questions for interviews and analyze responses. This would not be that costly.
 
 1. Go to [GroqAI](https://platform.openai.com/api-keys) and create an API key
 2. Add the API key to the `.env` file in `GROQ_API_KEY`
