@@ -6,8 +6,10 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
 );
+
+const ATS_URL = process.env.NEXT_PUBLIC_ATS_SYSTEM;
 
 export default function ResumePage() {
   const [loaded, setLoaded] = useState(false);
@@ -38,6 +40,14 @@ export default function ResumePage() {
     fetchOrgId();
   }, [user]);
 
+  if (!ATS_URL) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        ATS system URL is not configured.
+      </div>
+    );
+  }
+
   if (!orgId) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -53,15 +63,13 @@ export default function ResumePage() {
           <div className="flex flex-col items-center gap-3">
             <div className="h-10 w-10 rounded-full border-4 border-indigo-500 border-t-transparent animate-spin"></div>
 
-            <p className="text-gray-600 font-medium">
-              Loading ATS System...
-            </p>
+            <p className="text-gray-600 font-medium">Loading ATS System...</p>
           </div>
         </div>
       )}
 
       <iframe
-        src={`https://streamlit-proxy-szp0.onrender.com/?org=${orgId}`}
+        src={`${ATS_URL}/?org=${orgId}`}
         className="w-full h-screen border-none"
         onLoad={() => setLoaded(true)}
       />
