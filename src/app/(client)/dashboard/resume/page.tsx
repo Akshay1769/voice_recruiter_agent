@@ -40,14 +40,6 @@ export default function ResumePage() {
     fetchOrgId();
   }, [user]);
 
-  if (!ATS_URL) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        ATS system URL is not configured.
-      </div>
-    );
-  }
-
   if (!orgId) {
     return (
       <div className="flex items-center justify-center h-screen">
