@@ -6,6 +6,7 @@ const isPublicRoute = createRouteMatcher([
   "/sign-up(.*)",
   "/interview(.*)",
   "/call(.*)",
+  "/dashboard",
   "/api/register-call(.*)",
   "/api/get-call(.*)",
   "/api/generate-interview-questions(.*)",
@@ -13,18 +14,9 @@ const isPublicRoute = createRouteMatcher([
   "/api/analyze-communication(.*)",
 ]);
 
-const isProtectedRoute = createRouteMatcher([
-  "/dashboard(.*)",
-  "/interview(.*)",
-]);
-
 export default clerkMiddleware((auth, req) => {
   if (!isPublicRoute(req)) {
     auth().protect();
-  }
-
-  if (!auth().userId && isProtectedRoute(req)) {
-    return auth().redirectToSignIn();
   }
 });
 
