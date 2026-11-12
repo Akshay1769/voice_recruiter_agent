@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useOrganization } from "@clerk/nextjs";
+import { useOrganization, useUser } from "@clerk/nextjs";
+import DemoDashboard from "@/components/demo/demo-dashboard";
 import InterviewCard from "@/components/dashboard/interview/interviewCard";
 import CreateInterviewCard from "@/components/dashboard/interview/createInterviewCard";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
@@ -14,6 +15,7 @@ import { Gem, Plus } from "lucide-react";
 import Image from "next/image";
 
 function Interviews() {
+  const { isLoaded, isSignedIn } = useUser();
   const { interviews, interviewsLoading } = useInterviews();
   const { organization } = useOrganization();
   const [loading, setLoading] = useState<boolean>(false);
@@ -87,6 +89,9 @@ function Interviews() {
 
     fetchResponsesCount();
   }, [organization, currentPlan, allowedResponsesCount]);
+
+  if (!isLoaded) return <main className="p-8">Loading workspace…</main>;
+  if (!isSignedIn) return <DemoDashboard />;
 
   return (
     <main className="p-8 pt-0 ml-12 mr-auto rounded-md">
